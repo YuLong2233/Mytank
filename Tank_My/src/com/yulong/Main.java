@@ -1,6 +1,6 @@
 package com.yulong;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 		//在主方法里new一个TankFrame;
