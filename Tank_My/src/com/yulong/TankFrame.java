@@ -16,6 +16,7 @@ public class TankFrame extends Frame {
 		int x=100,y=100;
 		static final int GAME_WIDTH=1060,GAME_HEIGHT=800;
 		Tank tank = new Tank(x,y,Dir.DOWN,this);
+		Bullet b = new Bullet(x,y,Dir.DOWN);
 		
 		//重写TankFrame的构造方法，让TankFram类自己构造时生成窗口
 		TankFrame(){
@@ -63,6 +64,7 @@ public class TankFrame extends Frame {
 		public void paint(Graphics g) {
 			
 			tank.paint(g);
+			b.paint(g);
 			
 			
 		}
@@ -130,7 +132,9 @@ public class TankFrame extends Frame {
 				case KeyEvent.VK_RIGHT:
 					bR = false;
 					break;
-				
+				case KeyEvent.VK_CONTROL:
+					tank.fire();
+					
 				default:
 					break;
 				}

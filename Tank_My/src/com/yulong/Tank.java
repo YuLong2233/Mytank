@@ -49,8 +49,13 @@ public class Tank {
 			break;
 		}	
 	}
-	public void setMoving(boolean b) {
-		
+//	public void setMoving(boolean b) {
+//		
+//		
+//	}
+	public void fire() {
+		tf.b = new Bullet(x,y,this.dir);
+		tf.b.move();
 		
 	}
 }
