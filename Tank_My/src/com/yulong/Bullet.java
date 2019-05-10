@@ -7,6 +7,7 @@ public class Bullet {
 	int x ,y ;
 	final static int bulletSpeed = 10;
 	Dir dir = Dir.DOWN;
+	boolean isMoving = false;
 	
 	public Bullet(int x, int y, Dir dir) {
 		super();
@@ -16,6 +17,8 @@ public class Bullet {
 	}
 
 	public void move() {
+		if(isMoving) return;
+		
 		switch(dir) {
 		case UP:
 			y -= bulletSpeed;
@@ -35,6 +38,14 @@ public class Bullet {
 		
 	}
 
+	public boolean isMoving() {
+		return isMoving;
+	}
+
+	public void setMoving(boolean isMoving) {
+		this.isMoving = isMoving;
+	}
+
 	public void paint(Graphics g) {
 		Color c = g.getColor();
 		g.setColor(Color.yellow);
@@ -44,7 +55,5 @@ public class Bullet {
 		g.setColor(c);
 		
 	}
-	
-	
 	
 }

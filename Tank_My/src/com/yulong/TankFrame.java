@@ -78,6 +78,8 @@ public class TankFrame extends Frame {
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
+			
+				
 				int code = e.getKeyCode();
 				switch(code) {
 				case KeyEvent.VK_UP:
@@ -92,18 +94,22 @@ public class TankFrame extends Frame {
 				case KeyEvent.VK_RIGHT:
 					bR = true;
 					break;
+				case KeyEvent.VK_CONTROL:
+					tank.fire();
 				
 				default:
 					break;
 				}
 				setMainTankDir();
 			}
+		
 			
 			private void setMainTankDir() {
-//				if (!bL && !bU && !bR && !bD)
-//					tank.setMoving(false);
-//				else {
-//					tank.setMoving(true);
+				if (!bL && !bU && !bR && !bD)
+					tank.setMoving(false);
+				else {
+					tank.setMoving(true);
+				}
 
 					if (bL)
 						tank.setDir(Dir.LEFT);
@@ -138,6 +144,7 @@ public class TankFrame extends Frame {
 				default:
 					break;
 				}
+				setMainTankDir();
 			}
 			
 		}
